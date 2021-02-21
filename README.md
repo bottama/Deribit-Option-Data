@@ -42,8 +42,12 @@ The script `server-setup.sh`:
 * speicific documentation at `../ubuntu-server-setup.md`.
 
 ## csv_files ##
-Bitcoin Option data are stored in `btc_option_data.csv`.
-Ethereum Option data are stored in `eth_option_data.csv`.
+Data stroed in this directory are for local purposes.
+These files are not in the Ubuntu server.
+
+The `.csv` files are:
+* Bitcoin Option data are stored in `btc_option_data.csv`;
+* Ethereum Option data are stored in `eth_option_data.csv`.
 
 ## References ##
 
