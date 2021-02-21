@@ -36,5 +36,19 @@ crontab -e
 00 00 * * * python3 "option-data-download.py" >> option-data-download-log.log
 ```
 
+# Access log
+Access the `.log` file `option-data-download-log.log`.
+
+```bash
+cat option-data-download-log.log
+
+# other commands:
+[q]  #to quit.
+[/]  #“text” and [enter] to search a pattern.
+[G]  #to go to the end of the file.
+[gg] #to go to begining of the file.
+```
+
+
 # Supported versions
 This setup script has been tested against Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-56-generic x86_64)
