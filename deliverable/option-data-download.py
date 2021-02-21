@@ -2,7 +2,7 @@
 
 """
 Matteo Bottacini -- matteo.bottacini@usi.ch
-Last Update: February 11, 2021
+Last Update: February 21, 2021
 """
 
 # import modules
@@ -10,6 +10,8 @@ import json
 import requests
 import pandas as pd
 from tqdm import tqdm
+import sqlite3
+import datetime
 
 
 # functions
@@ -81,6 +83,9 @@ def get_option_data(coin):
     return coin_df
 
 
+# print data and time for log
+print('Date and time: ' +  datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S") + ' , format: dd/mm/yyyy hh:mm:ss')
+
 # download data -- BTC and ETH Options
 btc_data = get_option_data('BTC')
 eth_data = get_option_data('ETH')
@@ -88,3 +93,18 @@ eth_data = get_option_data('ETH')
 # export data to .csv -- append to existing
 btc_data.to_csv('../csv_files/btc_option_data.csv', index=0, mode='a', header=False)
 eth_data.to_csv('../csv_files/eth_option_data.csv', index=0, mode='a', header=False)
+
+# transform each element of the data frames into strings for sqlite3
+btc_data = btc_data.astype(str)
+eth_data = eth_data.astype(str)
+
+# connect to the SQLite3 database -- option_data.db
+conn = sqlite3.connect('option-data.db')
+print('Connection established with SQLite3 server: option-data.db')
+
+# create/update BTC and ETH tables in the database
+btc_data.to_sql(name='btc_option_data', con=conn, if_exists='append', chunksize=None, index=False)
+print('BTC data appended')
+
+eth_data.to_sql(name='eth_option_data', con=conn, if_exists='append', chunksize=None, index=False)
+print('ETH data appended')
