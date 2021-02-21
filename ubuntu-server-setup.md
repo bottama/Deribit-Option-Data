@@ -17,7 +17,7 @@ sudo apt-get install -y python3-pip
 sudo apt-get install cron
 ```
 
-Install python modules:
+Install Python modules:
 ```bash
 pip3 install pandas
 pip3 install tqdm
