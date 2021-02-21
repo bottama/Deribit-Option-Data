@@ -2,7 +2,10 @@
 #### Last Update February 21, 2021 ####
 #### Matteo Bottacini, [matteo.bottacini@usi.ch](mailto:matteo.bottacini@usi.ch) ####
 
-This project download cryptocurrency option data available on [Deribit](https://www.deribit.com) via a public API.
+
+# Project description
+
+This project is to download cryptocurrency option data available on [Deribit](https://www.deribit.com) via a public API.
 The project is run on an Ubuntu remote server with the implementation of `Python 3`, `Shell` and `SQLite`.
 
 The scripts do the following:
@@ -35,7 +38,7 @@ The script `option-data-download.py`:
 * creates/updates `btc_option_data` and `eth_option_data` tables in the database.
 
 The script `server-setup.sh`:
-* Bash setup script for Ubuntu servers
+* Bash setup script for Ubuntu servers;
 * speicific documentation at `../ubuntu-server-setup.md`.
 
 ## csv_files ##
