@@ -1,0 +1,22 @@
+# Set up Linux Ubuntu remote server
+
+# Matteo Bottacini, matteo.bottacini@usi.ch
+# last update: February 21, 2021
+
+# create a connection with the remote server
+ssh ---------------
+
+# install SQLite, Python3, pip and cron
+sudo apt-get update
+sudo apt install sqlite3
+sudo apt install python3
+sudo apt-get install -y python3-pip
+sudo apt-get install cron
+
+# install python modules
+pip3 install pandas
+pip3 install tqdm
+pip3 install sqlite3
+
+# set up cronjob
+crontab -e
