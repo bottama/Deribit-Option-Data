@@ -1,10 +1,11 @@
 # Bash setup script for Ubuntu servers
 
 This is a setup script to automate the setup and provisioning of Ubuntu servers. It does the following:
-* Adds SQLite, Python3, pip and cron to the server
-* Installs Python modules 
-* Setups a cron-job to run a python script
-* Adds `.log` file for traceback
+* Adds SQLite, Python3, pip and cron to the server;
+* Installs Python modules;
+* Adds a Python script;
+* Setups a cron job to run a python script;
+* Adds `.log` file for traceback.
 
 # Installation
 SSH into your server and install SQLite, Python3, pip and cron if not installed:
@@ -16,14 +17,19 @@ sudo apt-get install -y python3-pip
 sudo apt-get install cron
 ```
 
-Install python modules
+Install python modules:
 ```bash
 pip3 install pandas
 pip3 install tqdm
 pip3 install sqlite3
 ```
 
-# Setup cronjob
+Add `option-data-download.py` Python script to Ubuntu remote server:
+```bash
+pico option-data-download.py
+```
+
+# Setup cron jobs:
 Create a cronjob that run the python script `option-data-download.py` everyday at midnight in the crontab page and add `.log` file for traceback.
 ```bash
 crontab -e
