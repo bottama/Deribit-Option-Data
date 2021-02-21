@@ -18,6 +18,10 @@ pip3 install pandas
 pip3 install tqdm
 pip3 install sqlite3
 
+# add python script
+pico download-option-data.py
+
+
 # set up cronjob
 crontab -e
 
