@@ -27,6 +27,7 @@ Deribit-Option-Data/
         option-data-download.py
         server-setup.sh
     README.md
+    SQLite-database-management.md
     ubuntu-server-setup.md
 ~~~~
 
