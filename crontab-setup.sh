@@ -18,8 +18,8 @@
 5 0 * * * zip -9 -r eth_option_data.zip ./csv_files/eth_option_data.csv
 
 # move the zipped files to the zip_files folder and rename it with timestamp at 00.15
-15 0 * * * mv btc_option_data.zip zip_files/btc_option_data/$(date -d "today" +"%Y%m%d").zip
-15 0 * * * mv eth_option_data.zip zip_files/eth_option_data/$(date -d "today" +"%Y%m%d").zip
+15 0 * * * mv btc_option_data.zip zip_files/btc_option_data/$(date -d "-1 day" +"%Y%m%d").zip
+15 0 * * * mv eth_option_data.zip zip_files/eth_option_data/$(date -d "-1 day" +"%Y%m%d").zip
 
 # remove the excel files at 00.30
 30 0 * * * rm /home/bottama/csv_files/btc_option_data.csv
