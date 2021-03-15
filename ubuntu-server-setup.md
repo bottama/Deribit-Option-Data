@@ -5,6 +5,8 @@ This is a setup script to automate the setup and provisioning of Ubuntu servers.
 * Installs Python modules;
 * Adds a Python script;
 * Setups a cron job to run a python script;
+* Convert SQLite tables into .csv files and then zipped the files;
+* Initiazlize the database at the end of each day;
 * Adds `.log` file for traceback.
 
 # Installation
@@ -54,8 +56,14 @@ pico move_files.sh  #copy and paste the source code
 ```
 
 # Setup cron jobs:
-Create a cronjob that run the python script `/src/option-data-download.py` 5 minutes in the crontab page and add `.log` file for traceback in the `/logs` directory.
-`crontab -e` in your server and then:
+
+Create a cronjob to download and store data.
+Access the crontab page and then execute the copy and paste the commnads that follows.
+```bash
+crontab -e
+```
+
+Run the python script `/src/option-data-download.py` every 5 minutes and add `.log` file for traceback in the `/logs` directory.
 
 ```bash
 # download option data every 5 minutes and store log files
